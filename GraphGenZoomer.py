@@ -58,7 +58,7 @@ f.close()
 """FIXME ALEXIA"""
 """Creating outputs for 50.in"""
 f = open("outputs/50.out", "w")
-f.write("0  0\n")
+f.write("0 0\n")
 
 """The number of dropoff locations"""
 f.write("1\n")
