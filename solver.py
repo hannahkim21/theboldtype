@@ -24,6 +24,10 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
         A list of locations representing the car path
         A list of (location, [homes]) representing drop-offs
     """
+    carpath = []
+    for home in list_of_homes:
+        carpath.append(home)
+    carpath.append(starting_car_location)
     pass
     
 

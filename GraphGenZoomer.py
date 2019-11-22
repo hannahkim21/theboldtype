@@ -58,7 +58,13 @@ f.close()
 """FIXME ALEXIA"""
 """Creating outputs for 50.in"""
 f = open("outputs/50.out", "w")
+f.write("0  0\n")
 
+"""The number of dropoff locations"""
+f.write("1\n")
+
+for i in range(25):
+    f.write("0 " + str(i) + "\n")
 f.close()
 
 """Creating inputs for 100.in"""
@@ -115,6 +121,16 @@ f.close()
 """FIXME ALEXIA"""
 """Creating outputs for 100.in"""
 f = open("outputs/100.out", "w")
+
+"""The home names are the path taken by the car"""
+f.write("0  0\n")
+
+"""The number of dropoff locations"""
+f.write("1\n")
+
+for i in range(50):
+    f.write("0 " + str(i) + "\n")
+
 
 f.close()
 
@@ -173,5 +189,13 @@ f.close()
 """FIXME ALEXIA"""
 """Creating outputs for 200.in"""
 f = open("outputs/200.out", "w")
+
+f.write("0  0\n")
+
+"""The number of dropoff locations"""
+f.write("1\n")
+
+for i in range(100):
+    f.write("0 " + str(i) + "\n")
 
 f.close()
