@@ -4,6 +4,7 @@ import scipy
 import random
 import numpy
 
+"""Creating inputs for 50.in"""
 G_50 = nx.gnm_random_graph(50, 800)
 
 for (u, v) in G_50.edges():
@@ -21,7 +22,7 @@ for i in range(x):
             matrix50[i, j] = floydwarsh50[i][j]
 
 
-f = open("50.in", "w")
+f = open("inputs/50.in", "w")
 """The number of locations"""
 f.write("50\n")
 
@@ -54,9 +55,14 @@ for i in range(x):
 
 f.close()
 
+"""FIXME ALEXIA"""
+"""Creating outputs for 50.in"""
+f = open("outputs/50.out", "w")
 
+f.close()
+
+"""Creating inputs for 100.in"""
 G_100 = nx.gnm_random_graph(100, 4000)
-
 
 for (u, v) in G_100.edges():
     if u == v:
@@ -73,7 +79,7 @@ for i in range(x):
             matrix100[i, j] = floydwarsh100[i][j]
 
 
-f = open("100.in", "w")
+f = open("inputs/100.in", "w")
 """The number of locations"""
 f.write("100\n")
 
@@ -106,6 +112,14 @@ for i in range(x):
 
 f.close()
 
+"""FIXME ALEXIA"""
+"""Creating outputs for 100.in"""
+f = open("outputs/100.out", "w")
+
+f.close()
+
+
+"""Creating inputs for 200.in"""
 G_200 = nx.gnm_random_graph(200, 16000)
 
 for (u, v) in G_200.edges():
@@ -123,7 +137,7 @@ for i in range(x):
             matrix200[i, j] = floydwarsh200[i][j]
 
 
-f = open("200.in", "w")
+f = open("inputs/200.in", "w")
 """The number of locations"""
 f.write("200\n")
 
@@ -153,5 +167,11 @@ for i in range(x):
         else:
             f.write(str(matrix200[i, j])+" ")
     f.write("\n")
+
+f.close()
+
+"""FIXME ALEXIA"""
+"""Creating outputs for 200.in"""
+f = open("outputs/200.out", "w")
 
 f.close()
