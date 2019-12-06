@@ -6,6 +6,9 @@ import argparse
 import utils
 
 from student_utils import *
+import networkx as nx
+from Christofides import christofides
+
 """
 ======================================================================
   Complete the following function.
@@ -24,7 +27,24 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
         A list of locations representing the car path
         A list of (location, [homes]) representing drop-offs
     """
+    """initialize car path"""
+    carpath = []
+    carpath.append(starting_car_location)
+
+    """ base case """
+    if len(list_of_locations) <= 2:
+        carpath.append(starting_car_location)
+        dropoffs = [starting_car_location, [list_of_homes]]
+        return carpath,dropoffs
+    else:
+        min_path = maxsize
+        for location in list_of_locations:
+            newdist = solve(list_of_locations.remove(location), list_of_homes, starting_car_location, params)
+        carpath = min()
+    return 
+
     pass
+
     
 
 """

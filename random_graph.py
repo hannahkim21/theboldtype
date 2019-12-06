@@ -18,7 +18,6 @@ def isValid():
 		return "Graph is is_metric"
 	else:
 		shortest = dict(nx.floyd_warshall(G))
-    	for u, v, datadict in G.edges(data=True):
-        	while abs(shortest[u][v] - datadict['weight']) >= 0.00001:
-        		G.edges[u,v]['weight'] = random.randint(0,10)
-       
+    for u, v, datadict in G.edges(data=True):
+        if abs(shortest[u][v] - datadict['weight']) >= 0.00001:
+        	G.edges[u,v]['weight'] = random.randint(0,10)
