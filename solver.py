@@ -43,7 +43,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
         degrees.append(tup)
 
     #2 Sort by degree
-    sorted_degree = sorted(degrees, key = lambda x: -x[1])
+    degrees = sorted(degrees, key = lambda x: -x[1])
 
     #Cluster representation
     cluster_dict = {}
@@ -52,7 +52,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     home_count = len(index_homes)
     for i in range(home_count):
         # Find the node of maximal degree
-        max_node = sorted_degree[0][0]
+        max_node = degrees[0][0]
         cluster_dict[max_node] = []
 
         # Determine the cutoff distance to be added
@@ -74,7 +74,7 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
 
         # Remove node of maximal degree from index_locs
         index_locs.remove(max_node)
-        sorted_degree.pop(0)
+        degrees.pop(0)
 
         #Check cutoff
         k = 0
@@ -130,20 +130,6 @@ def solve(list_of_locations, list_of_homes, starting_car_location, adjacency_mat
     path.append(nx.shortest_path_length(G, last, start_ind, weight=None))
 
     return path, cluster_dict
-
-    # for cluster in cluster_dict:
-    #     close = None
-    #     node = cluster[0]
-    #     cluster_neighbor = [n for n in G.neighbors(node)]
-    #     minlen = 2,500,000,000
-    #     for i in cluster_neighbor:
-    #         if shortest_path_length(G, node, i, weight=None) < minlen:
-    #             minlen = shortest_path_length(G, max_node, node, weight=None)
-    #             close = i
-    #
-    #         path.append(curr_ind)
-    #
-    #     curr_ind =
 
 """
 ======================================================================
