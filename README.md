@@ -9,3 +9,5 @@ The arguments should be:
 2) the file path to your input directory
 3) the file path to your output directory
 4) params, which we did not use, but would specify additional arguments
+
+We used the Python package networkx, which is a graph package which we used to generate our inputs and for our solver method. 
